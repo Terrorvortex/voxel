@@ -1,0 +1,32 @@
+{
+  "name": "voxel-desktop",
+  "version": "1.0.0",
+  "description": "Voxel chat app desktop wrapper",
+  "main": "main.js",
+  "author": "Voxel",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.voxel.chat",
+    "productName": "Voxel",
+    "directories": { "output": "dist" },
+    "files": ["index.html", "main.js", "package.json"],
+    "win": {
+      "target": [{ "target": "nsis", "arch": ["x64"] }]
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
