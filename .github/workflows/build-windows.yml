@@ -1,3 +1,4 @@
+
 name: Build Voxel for Windows
 
 on:
@@ -13,16 +14,19 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 22
-          cache: npm
+
       - name: Install dependencies
         run: npm install
+
       - name: Build Windows installer
         run: npm run dist
+
       - name: Upload installer
         uses: actions/upload-artifact@v4
         with:
