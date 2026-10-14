@@ -18,6 +18,7 @@
     "productName": "Voxel",
     "directories": { "output": "dist" },
     "files": ["index.html", "main.js", "package.json"],
+    "publish": null,
     "win": {
       "target": [{ "target": "nsis", "arch": ["x64"] }]
     },
